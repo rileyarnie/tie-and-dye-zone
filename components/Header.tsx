@@ -10,7 +10,7 @@ const Header: React.FC = () => {
         dispatch(toggleSidebar())
     }
 
-    return <div className="bg-red-100 p-10 flex justify-between align-middle">
+    return <div className="shadow-lg bg-white sticky top-0 z-10 flex-1 p-10 flex justify-between align-middle">
         <div className="hidden md:block">menus here</div>
         <div className=""><p className="text-2xl">Tie&Dye Zone</p></div>
         <div className="hidden md:block">icons here</div>
