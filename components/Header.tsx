@@ -1,12 +1,20 @@
 import React from 'react';
+import { useAppDispatch } from "../app/hooks"
 import { AiOutlineAlignRight } from "react-icons/ai";
+import { toggleSidebar } from '../features/navigation/sideBarSlice';
 
 const Header: React.FC = () => {
+    const dispatch = useAppDispatch()
+
+    const toggleSidebarHandler = () => {
+        dispatch(toggleSidebar())
+    }
+
     return <div className="bg-red-100 p-10 flex justify-between align-middle">
         <div className="hidden md:block">menus here</div>
         <div className=""><p className="text-2xl">Tie&Dye Zone</p></div>
         <div className="hidden md:block">icons here</div>
-        <div className="cursor-pointer md:hidden">
+        <div className="cursor-pointer md:hidden" onClick={toggleSidebarHandler}>
             <AiOutlineAlignRight size={25} />
         </div>
     </div>;
